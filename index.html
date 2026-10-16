@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Stop Telecom Buy and Sell</title>
+<style>
+:root { color-scheme: light dark; --gold:#e9b949; --green:#116b45; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; background:light-dark(#f7f6f2,#111310); color:light-dark(#191a17,#f5f4ef); }
+.root { min-height:100vh; width:100%; background:light-dark(#f7f6f2,#111310); }
+header { background:#10110f; color:#fff; border-bottom:3px solid var(--gold); padding:16px max(18px,calc((100% - 1120px)/2)); }
+.nav { display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+.brand { font-weight:900; letter-spacing:.4px; font-size:clamp(18px,3vw,26px); }
+.brand span { color:var(--gold); }
+nav { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+nav a { color:#f4f1e8; text-decoration:none; font-size:14px; }
+button, .cta { border:0; border-radius:999px; padding:11px 16px; background:var(--gold); color:#17130a; font-weight:800; cursor:pointer; text-decoration:none; display:inline-block; }
+.hero { background:radial-gradient(ellipse at 80% 20%,#3a3020 0,#171815 42%,#0c0d0c 100%); color:#fff; padding:56px 20px; }
+.hero-inner { max-width:1120px; margin:auto; display:grid; grid-template-columns:1.3fr .7fr; gap:28px; align-items:center; }
+.kicker { color:var(--gold); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:bold; }
+h1 { font-size:clamp(34px,5vw,58px); line-height:1.04; margin:14px 0; }
+.hero p { color:#e0dfd9; line-height:1.65; max-width:610px; }
+.hero-card { border:1px solid #7e682e; border-radius:24px; padding:24px; background:linear-gradient(145deg,#25251f,#10110f); text-align:center; }
+.phone-art { font-size:90px; line-height:1.2; filter:drop-shadow(0 10px 18px #000); }
+.hero-card strong { display:block; font-size:20px; color:var(--gold); margin-top:8px; }
+.trust { max-width:1120px; margin:22px auto 0; display:flex; gap:10px; flex-wrap:wrap; }
+.trust span { border:1px solid #51472d; border-radius:999px; padding:8px 12px; color:#f2e5c0; font-size:13px; }
+main { max-width:1120px; margin:auto; padding:38px 20px 52px; }
+.section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
+h2 { margin:0 0 8px; font-size:28px; }
+.muted { color:light-dark(#62645e,#b9bbb3); }
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin:20px 0; }
+.filters button { background:light-dark(#e7e5dc,#292b26); color:light-dark(#222,#f5f4ef); border:1px solid light-dark(#d6d3c8,#41443c); }
+.filters button.active { background:var(--gold); color:#17130a; border-color:var(--gold); }
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.product { background:light-dark(#fff,#1c1e1a); border:1px solid light-dark(#e2dfd5,#34372f); border-radius:18px; overflow:hidden; }
+.product-art { height:165px; display:grid; place-items:center; font-size:68px; background:linear-gradient(135deg,light-dark(#e9e6dc,#292b25),light-dark(#d4d0c4,#171916)); }
+.product-body { padding:16px; }
+.tag { display:inline-block; font-size:11px; font-weight:800; text-transform:uppercase; color:light-dark(#655018,#f4d37b); background:light-dark(#fff4cf,#3a321f); padding:5px 8px; border-radius:6px; }
+.product h3 { margin:10px 0 6px; font-size:18px; }
+.price { font-size:20px; font-weight:900; margin:8px 0 14px; }
+.product .cta { width:100%; text-align:center; font-size:13px; }
+.note { border:1px dashed light-dark(#b8a66e,#776333); padding:14px; border-radius:12px; margin-top:18px; font-size:13px; line-height:1.55; }
+.contact { background:light-dark(#eae6d9,#20221c); border-radius:22px; padding:26px; margin-top:38px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+footer { background:#10110f; color:#d7d5cd; padding:24px 20px; text-align:center; font-size:13px; border-top:3px solid var(--gold); }
+.ar { direction:rtl; }
+@media(max-width:760px) { .hero-inner { grid-template-columns:1fr; } .hero-card { max-width:420px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } nav { gap:10px; } }
+@media(max-width:480px) { .grid { grid-template-columns:1fr; } .product-art { height:150px; } .hero { padding-top:38px; } }
+</style>
+</head>
+<body>
+<div class="root">
+<header><div class="nav"><div class="brand">ONE STOP <span>TELECOM</span><div style="font-size:11px;font-weight:600;color:#d8d4c8;letter-spacing:1.5px;margin-top:4px">BUY AND SELL · بيع وشراء</div></div><nav><a href="#phones">Phones / الجوالات</a><a href="#about">About / من نحن</a><a href="#contact">Contact / تواصل معنا</a><button onclick="showContact()">WhatsApp Us</button></nav></div></header>
+<section class="hero"><div class="hero-inner"><div><div class="kicker">Your trusted phone partner · شريكك الموثوق</div><h1>Find your next<br><span style="color:var(--gold)">smartphone.</span></h1><p>New and used mobile phones at great prices. Browse the sample listings and contact us on WhatsApp to ask about availability, condition, and today's price.</p><p class="ar" lang="ar">جوالات جديدة ومستعملة بأسعار مميزة. تصفح المنتجات وتواصل معنا للاستفسار عن التوفر والحالة والسعر.</p><a class="cta" href="#phones">Browse Phones / تصفح الجوالات</a><div class="trust"><span>✓ New & Used</span><span>✓ Multiple Brands</span><span>✓ Saudi Arabia</span></div></div><div class="hero-card"><div class="phone-art">📱</div><strong>ONE STOP TELECOM</strong><div style="color:#d9d5c9;margin-top:8px">BUY AND SELL · بيع وشراء</div><div style="font-size:13px;color:#b7b3a8;margin-top:12px">Saudi Arabia · المملكة العربية السعودية</div></div></div></section>
+<main><section id="phones"><div class="section-head"><div><div class="kicker">Featured collection</div><h2>Phones for every budget</h2><div class="muted">تشكيلة من الجوالات الجديدة والمستعملة</div></div><div class="muted" style="font-size:13px">Sample products — replace with your real stock</div></div><div class="filters"><button class="active" data-filter="all">All / الكل</button><button data-filter="new">New / جديد</button><button data-filter="used">Used / مستعمل</button></div><div class="grid" id="productGrid">
+<article class="product" data-kind="used"><div class="product-art">📱</div><div class="product-body"><span class="tag">Used · مستعمل</span><h3>iPhone — Sample listing</h3><div class="muted" style="font-size:13px">Storage and condition to be added</div><div class="price">Ask for price</div><button class="cta" onclick="showContact()">Ask on WhatsApp</button></div></article>
+<article class="product" data-kind="new"><div class="product-art">📲</div><div class="product-body"><span class="tag">New · جديد</span><h3>Samsung Galaxy — Sample</h3><div class="muted" style="font-size:13px">Model and storage to be added</div><div class="price">Ask for price</div><button class="cta" onclick="showContact()">Ask on WhatsApp</button></div></article>
+<article class="product" data-kind="used"><div class="product-art">📱</div><div class="product-body"><span class="tag">Used · مستعمل</span><h3>Android Phone — Sample</h3><div class="muted" style="font-size:13px">Brand and condition to be added</div><div class="price">Ask for price</div><button class="cta" onclick="showContact()">Ask on WhatsApp</button></div></article>
+</div><div class="note"><strong>Setup note:</strong> These are sample listings, not live inventory. Add your actual phone model, storage, condition, price in SAR, photos, and warranty details before sharing this website with customers.</div></section>
+<section id="about" class="contact"><div><div class="kicker">About us · من نحن</div><h2>One Stop Telecom Buy and Sell</h2><p class="muted" style="max-width:620px;line-height:1.6;margin-bottom:0">Your place to explore new and used mobile phones in Saudi Arabia. Contact us to confirm stock, prices, and pickup or delivery details.</p></div><div class="ar" lang="ar"><h3>ون ستوب تيليكوم</h3><p class="muted">لبيع وشراء الجوالات الجديدة والمستعملة في السعودية.</p></div></section>
+<section id="contact" class="contact"><div><h2>Ready to find a phone?</h2><p class="muted">Message us to check today's availability and price.</p><p class="ar muted" lang="ar">راسلنا للاستفسار عن التوفر والسعر.</p></div><button onclick="showContact()">Set up WhatsApp contact</button></section></main>
+<footer>© One Stop Telecom Buy and Sell · Saudi Arabia<br><span style="color:#aaa">Preview website — not published yet</span></footer>
+</div>
+<script>
+const buttons=document.querySelectorAll('[data-filter]');
+buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.product').forEach(card=>{card.style.display=filter==='all'||card.dataset.kind===filter?'':'none';});}));
+function showContact(){alert('To activate WhatsApp buttons, add your business phone number with country code (Saudi Arabia: +966…). This preview does not yet have your number or live inventory.');}
+</script>
+</body>
+</html>
