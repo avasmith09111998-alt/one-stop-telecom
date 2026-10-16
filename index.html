@@ -65,7 +65,9 @@ footer { background:#10110f; color:#d7d5cd; padding:24px 20px; text-align:center
 <script>
 const buttons=document.querySelectorAll('[data-filter]');
 buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.product').forEach(card=>{card.style.display=filter==='all'||card.dataset.kind===filter?'':'none';});}));
-function showContact(){alert('To activate WhatsApp buttons, add your business phone number with country code (Saudi Arabia: +966…). This preview does not yet have your number or live inventory.');}
+function showContact(){
+  window.open('https://wa.me/966574178748?text=Hello%2C%20I%20am%20interested%20in%20a%20phone.','_blank');
+}
 </script>
 </body>
 </html>
